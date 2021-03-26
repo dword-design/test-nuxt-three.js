@@ -1,8 +1,8 @@
 import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
 import ActionManager from './three-utils/action-manager'
+import ThirdPersonControls from './three-utils/third-person-controls'
 
 export default async () => {
   const scene = new THREE.Scene()
@@ -21,11 +21,7 @@ export default async () => {
   )
   camera.position.y = 2
   camera.position.z = 5
-  const controls = new OrbitControls(camera, renderer.domElement)
-  controls.minDistance = 15
-  controls.maxDistance = 15
-  controls.minPolarAngle = 0.25 * Math.PI
-  controls.maxPolarAngle = 0.4 * Math.PI
+  const controls = new ThirdPersonControls(camera, renderer)
   const light = new THREE.DirectionalLight(0xffffff, 1)
   light.position.set(0, 20, 20)
   light.castShadow = true
