@@ -1,0 +1,6 @@
+{
+  "extends": "@dword-design/eslint-config",
+  "rules": {
+    "import/no-webpack-loader-syntax": "off"
+  }
+}

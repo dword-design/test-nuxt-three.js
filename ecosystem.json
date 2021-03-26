@@ -1,0 +1,23 @@
+{
+  "apps": [
+    {
+      "args": "start",
+      "exec_mode": "cluster",
+      "instances": "max",
+      "name": "test-nuxt-three.js",
+      "script": "npm"
+    }
+  ],
+  "deploy": {
+    "production": {
+      "host": [
+        "dword-design.de"
+      ],
+      "path": "/var/www/test-nuxt-three.js",
+      "user": "root",
+      "repo": "git@github.com:dword-design/test-nuxt-three.js.git",
+      "post-deploy": "source ~/.nvm/nvm.sh && yarn --frozen-lockfile && node --max-old-space-size=400 ./node_modules/.bin/nuxt-babel build --config-file node_modules/@dword-design/base-config-nuxt/dist/nuxt.config.js && pm2 startOrReload ecosystem.json",
+      "ref": "origin/master"
+    }
+  }
+}

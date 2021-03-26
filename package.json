@@ -1,0 +1,43 @@
+{
+  "name": "test-nuxt-three.js",
+  "version": "1.0.0",
+  "description": "",
+  "repository": "dword-design/test-nuxt-three.js",
+  "funding": "https://www.buymeacoffee.com/dword",
+  "license": "MIT",
+  "author": "Sebastian Landwehr <info@dword-design.de>",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "analyze": "base analyze",
+    "checkUnknownFiles": "base checkUnknownFiles",
+    "commit": "base commit",
+    "dev": "base dev",
+    "lint": "base lint",
+    "prepare": "base prepare",
+    "prepublishOnly": "base prepublishOnly",
+    "pull": "base pull",
+    "push": "base push",
+    "setupDeploy": "base setupDeploy",
+    "start": "base start",
+    "test": "base test"
+  },
+  "dependencies": {
+    "@dword-design/nuxt-push-plugins": "^1.0.12",
+    "depcheck-package-name": "^1.0.4",
+    "expose-loader": "^1.0.0",
+    "three": "^0.126.1",
+    "vue": "^2.6.12",
+    "webpack": "^4.0.0"
+  },
+  "devDependencies": {
+    "@dword-design/base": "^7.10.1",
+    "@dword-design/base-config-app": "^1.6.8"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "baseConfig": "@dword-design/app"
+}
