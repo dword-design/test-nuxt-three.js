@@ -2,12 +2,7 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
-import {
-  create as createActionManager,
-  setAction,
-  triggerOneTimeAction,
-  update as updateActionManager,
-} from './three-utils/action-manager'
+import ActionManager from './three-utils/action-manager'
 
 export default async () => {
   const scene = new THREE.Scene()
@@ -29,8 +24,8 @@ export default async () => {
   const controls = new OrbitControls(camera, renderer.domElement)
   controls.minDistance = 15
   controls.maxDistance = 15
-  controls.minPolarAngle = 0.35 * Math.PI
-  controls.maxPolarAngle = 0.35 * Math.PI
+  controls.minPolarAngle = 0.25 * Math.PI
+  controls.maxPolarAngle = 0.4 * Math.PI
   const light = new THREE.DirectionalLight(0xffffff, 1)
   light.position.set(0, 20, 20)
   light.castShadow = true
@@ -70,12 +65,12 @@ export default async () => {
     }
   })
   scene.add(player)
-  const actionManager = createActionManager(gltf)
-  setAction(actionManager, 'Idle')
+  const actionManager = new ActionManager(gltf)
+  actionManager.setAction('Idle')
   const keyStates = {}
   document.addEventListener('keydown', event => {
     if (event.code === 'Space' && !keyStates[event.code]) {
-      triggerOneTimeAction(actionManager, 'Jump')
+      actionManager.triggerOneTimeAction('Jump')
     }
     keyStates[event.code] = true
   })
@@ -134,14 +129,13 @@ export default async () => {
       6 * delta
     )
     if (actionManager.activeAction.getClip().name !== 'Jump') {
-      setAction(
-        actionManager,
+      actionManager.setAction(
         keyStates.KeyW || keyStates.KeyS || keyStates.KeyA || keyStates.KeyD
           ? 'Running'
           : 'Idle'
       )
     }
-    updateActionManager(actionManager, delta)
+    actionManager.update(delta)
     controls.update()
     renderer.render(scene, camera)
   }
