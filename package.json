@@ -30,7 +30,7 @@
     "expose-loader": "^1.0.0",
     "three": "^0.126.1",
     "vue": "^2.6.12",
-    "webpack": "^4.0.0"
+    "webpack": "^5.0.0"
   },
   "devDependencies": {
     "@dword-design/base": "^7.10.1",
