@@ -27,7 +27,7 @@
   "dependencies": {
     "@dword-design/nuxt-push-plugins": "^1.0.12",
     "depcheck-package-name": "^1.0.4",
-    "expose-loader": "^1.0.0",
+    "expose-loader": "^2.0.0",
     "three": "^0.126.1",
     "vue": "^2.6.12",
     "webpack": "^4.0.0"
