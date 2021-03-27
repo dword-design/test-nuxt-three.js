@@ -35,30 +35,38 @@ export default async () => {
   controls.minPolarAngle = 0.25 * Math.PI
 
   const playerMovement = new PlayerMovement(camera)
+  scene.add(
+    (() => {
+      const _ = new THREE.DirectionalLight(0xffffff, 1)
+      _.position.set(0, 20, 20)
+      _.castShadow = true
+      _.shadow.mapSize.width = 2048
+      _.shadow.mapSize.height = 2048
+      _.shadow.camera = new THREE.OrthographicCamera(
+        -500,
+        500,
+        500,
+        -500,
+        0.5,
+        1000
+      )
 
-  const light = new THREE.DirectionalLight(0xffffff, 1)
-  light.position.set(0, 20, 20)
-  light.castShadow = true
-  light.shadow.mapSize.width = 2048
-  light.shadow.mapSize.height = 2048
-  light.shadow.camera = new THREE.OrthographicCamera(
-    -500,
-    500,
-    500,
-    -500,
-    0.5,
-    1000
+      return _
+    })()
   )
-  scene.add(light)
 
-  const groundTexture = textureLoader.load('grasslight-big.jpg')
-  groundTexture.wrapS = THREE.RepeatWrapping
-  groundTexture.wrapT = THREE.RepeatWrapping
-  groundTexture.repeat.set(50, 50)
-  groundTexture.anisotropy = 16
-  groundTexture.encoding = THREE.sRGBEncoding
+  const groundMaterial = new THREE.MeshLambertMaterial({
+    map: (() => {
+      const _ = textureLoader.load('grasslight-big.jpg')
+      _.wrapS = THREE.RepeatWrapping
+      _.wrapT = THREE.RepeatWrapping
+      _.repeat.set(50, 50)
+      _.anisotropy = 16
+      _.encoding = THREE.sRGBEncoding
 
-  const groundMaterial = new THREE.MeshLambertMaterial({ map: groundTexture })
+      return _
+    })(),
+  })
 
   const ground = new THREE.Mesh(
     new THREE.PlaneGeometry(1000, 1000),
