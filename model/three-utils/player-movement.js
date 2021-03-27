@@ -1,16 +1,10 @@
+import createKeyState from 'key-state'
 import * as THREE from 'three'
 
 export default class {
   constructor(camera) {
     this.camera = camera
-    this.keyStates = {}
-    document.addEventListener('keydown', event => {
-      this.keyStates[event.code] = true
-    })
-    document.addEventListener(
-      'keyup',
-      event => (this.keyStates[event.code] = false)
-    )
+    this.keyState = createKeyState(window)
   }
 
   getCameraDirection() {
@@ -32,16 +26,16 @@ export default class {
     const playerCurrentDirection = new THREE.Vector3()
     this.target.getWorldDirection(playerCurrentDirection)
     let playerTargetDirection = new THREE.Vector3()
-    if (this.keyStates.KeyW) {
+    if (this.keyState.KeyW) {
       playerTargetDirection.add(cameraDirection)
     }
-    if (this.keyStates.KeyS) {
+    if (this.keyState.KeyS) {
       playerTargetDirection.sub(cameraDirection)
     }
-    if (this.keyStates.KeyA) {
+    if (this.keyState.KeyA) {
       playerTargetDirection.sub(cameraOrthogonalDirection)
     }
-    if (this.keyStates.KeyD) {
+    if (this.keyState.KeyD) {
       playerTargetDirection.add(cameraOrthogonalDirection)
     }
     playerTargetDirection.normalize()

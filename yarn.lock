@@ -8810,6 +8810,10 @@ jsprim@^1.2.2:
     array-includes "^3.1.2"
     object.assign "^4.1.2"
 
+key-state@dword-design/key-state#fork:
+  version "1.0.1"
+  resolved "https://codeload.github.com/dword-design/key-state/tar.gz/ee3160ec4ad6dbf3c1b5cfd69ebcf64ebbfb0817"
+
 kind-of@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-2.0.1.tgz#018ec7a4ce7e3a86cb9141be519d24c8faa981b5"

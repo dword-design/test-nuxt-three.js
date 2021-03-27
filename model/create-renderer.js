@@ -1,3 +1,4 @@
+import createKeyState from 'key-state'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
@@ -83,9 +84,7 @@ export default async () => {
   const actionManager = new ActionManager(gltf)
   actionManager.setAction('Idle')
 
-  const keyStates = {}
-  document.addEventListener('keydown', event => (keyStates[event.code] = true))
-  document.addEventListener('keyup', event => (keyStates[event.code] = false))
+  const keyState = createKeyState(window)
   controls.target = player.position
   playerMovement.target = player
   window.addEventListener('resize', () => {
@@ -100,12 +99,12 @@ export default async () => {
     requestAnimationFrame(animate)
 
     const delta = clock.getDelta()
-    if (keyStates.Space) {
+    if (keyState.Space) {
       actionManager.triggerOneTimeAction('Jump')
     }
     if (actionManager.activeAction.getClip().name !== 'Jump') {
       actionManager.setAction(
-        keyStates.KeyW || keyStates.KeyS || keyStates.KeyA || keyStates.KeyD
+        keyState.KeyW || keyState.KeyS || keyState.KeyA || keyState.KeyD
           ? 'Running'
           : 'Idle'
       )
