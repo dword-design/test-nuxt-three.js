@@ -1,22 +1,22 @@
 <!-- TITLE/ -->
-# test-nuxt-three.js
+# @dword-design/test-nuxt-three
 <!-- /TITLE -->
 
 <!-- BADGES/ -->
   <p>
-    <img src="https://img.shields.io/badge/os-linux%20%7C%C2%A0macos%20%7C%C2%A0windows-blue" alt="Linux macOS Windows compatible"><a href="https://github.com/dword-design/test-nuxt-three.js/actions">
+    <img src="https://img.shields.io/badge/os-linux%20%7C%C2%A0macos%20%7C%C2%A0windows-blue" alt="Linux macOS Windows compatible"><a href="https://github.com/dword-design/test-nuxt-three/actions">
       <img
-        src="https://github.com/dword-design/test-nuxt-three.js/workflows/build/badge.svg"
+        src="https://github.com/dword-design/test-nuxt-three/workflows/build/badge.svg"
         alt="Build status"
       >
-    </a><a href="https://codecov.io/gh/dword-design/test-nuxt-three.js">
+    </a><a href="https://codecov.io/gh/dword-design/test-nuxt-three">
       <img
-        src="https://codecov.io/gh/dword-design/test-nuxt-three.js/branch/master/graph/badge.svg"
+        src="https://codecov.io/gh/dword-design/test-nuxt-three/branch/master/graph/badge.svg"
         alt="Coverage status"
       >
-    </a><a href="https://david-dm.org/dword-design/test-nuxt-three.js">
-      <img src="https://img.shields.io/david/dword-design/test-nuxt-three.js" alt="Dependency status">
-    </a><img src="https://img.shields.io/badge/renovate-enabled-brightgreen" alt="Renovate enabled"><br/><a href="https://gitpod.io/#https://github.com/dword-design/test-nuxt-three.js">
+    </a><a href="https://david-dm.org/dword-design/test-nuxt-three">
+      <img src="https://img.shields.io/david/dword-design/test-nuxt-three" alt="Dependency status">
+    </a><img src="https://img.shields.io/badge/renovate-enabled-brightgreen" alt="Renovate enabled"><br/><a href="https://gitpod.io/#https://github.com/dword-design/test-nuxt-three">
       <img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod">
     </a><a href="https://www.buymeacoffee.com/dword">
       <img
@@ -49,17 +49,17 @@
 
 ```bash
 # npm
-$ npm install test-nuxt-three.js
+$ npm install @dword-design/test-nuxt-three
 
 # Yarn
-$ yarn add test-nuxt-three.js
+$ yarn add @dword-design/test-nuxt-three
 ```
 <!-- /INSTALL -->
 
 <!-- LICENSE/ -->
 ## Contribute
 
-Are you missing something or want to contribute? Feel free to file an [issue](https://github.com/dword-design/test-nuxt-three.js/issues) or [pull request](https://github.com/dword-design/test-nuxt-three.js/pulls)! ⚙️
+Are you missing something or want to contribute? Feel free to file an [issue](https://github.com/dword-design/test-nuxt-three/issues) or [pull request](https://github.com/dword-design/test-nuxt-three/pulls)! ⚙️
 
 ## Support
 

@@ -2,7 +2,7 @@
   "name": "@dword-design/test-nuxt-three",
   "version": "1.0.0",
   "description": "",
-  "repository": "dword-design/test-nuxt-three.js",
+  "repository": "dword-design/test-nuxt-three",
   "funding": "https://www.buymeacoffee.com/dword",
   "license": "MIT",
   "author": "Sebastian Landwehr <info@dword-design.de>",
@@ -25,6 +25,7 @@
     "test": "base test"
   },
   "dependencies": {
+    "@dword-design/functions": "^3.0.0",
     "@dword-design/nuxt-push-plugins": "^1.0.12",
     "depcheck-package-name": "^1.0.4",
     "expose-loader": "^1.0.0",

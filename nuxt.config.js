@@ -1,6 +1,4 @@
 export default {
-  css: [
-    '~/assets/style.scss',
-  ],
+  css: ['~/assets/style.scss'],
   modules: ['~/modules/three'],
 }

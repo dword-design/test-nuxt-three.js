@@ -1,7 +1,5 @@
 import nuxtPushPlugins from '@dword-design/nuxt-push-plugins'
 import P from 'path'
-import webpack from 'webpack'
-import packageName from 'depcheck-package-name'
 
 export default function () {
   this.options.build.transpile.push('three')
