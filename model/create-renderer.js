@@ -84,12 +84,7 @@ export default async () => {
   actionManager.setAction('Idle')
 
   const keyStates = {}
-  document.addEventListener('keydown', event => {
-    if (event.code === 'Space' && !keyStates[event.code]) {
-      actionManager.triggerOneTimeAction('Jump')
-    }
-    keyStates[event.code] = true
-  })
+  document.addEventListener('keydown', event => (keyStates[event.code] = true))
   document.addEventListener('keyup', event => (keyStates[event.code] = false))
   controls.target = player.position
   playerMovement.target = player
@@ -105,6 +100,9 @@ export default async () => {
     requestAnimationFrame(animate)
 
     const delta = clock.getDelta()
+    if (keyStates.Space) {
+      actionManager.triggerOneTimeAction('Jump')
+    }
     if (actionManager.activeAction.getClip().name !== 'Jump') {
       actionManager.setAction(
         keyStates.KeyW || keyStates.KeyS || keyStates.KeyA || keyStates.KeyD

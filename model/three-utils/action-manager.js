@@ -23,11 +23,11 @@ export default class {
   }
 
   setAction(name, duration = 0.5) {
-    this.previousAction = this.activeAction
-    this.activeAction = this.actions[name]
-    if (this.previousAction === this.activeAction) {
+    if (this.actions[name] === this.activeAction) {
       return
     }
+    this.previousAction = this.activeAction
+    this.activeAction = this.actions[name]
     if (this.previousAction !== undefined) {
       this.previousAction.fadeOut(duration)
     }
@@ -35,11 +35,11 @@ export default class {
   }
 
   triggerOneTimeAction(name, duration = 0.5) {
-    this.previousAction = this.activeAction
-    this.activeAction = this.actions[name]
-    if (this.previousAction === this.activeAction) {
+    if (this.actions[name] === this.activeAction) {
       return
     }
+    this.previousAction = this.activeAction
+    this.activeAction = this.actions[name]
     if (this.previousAction !== undefined) {
       this.previousAction.fadeOut(duration)
     }
