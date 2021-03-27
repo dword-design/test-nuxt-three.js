@@ -7,34 +7,25 @@ import ActionManager from './three-utils/action-manager'
 import PlayerMovement from './three-utils/player-movement'
 
 export default async () => {
-  const scene = new THREE.Scene()
-  scene.background = new THREE.Color(0xcce0ff)
-  scene.fog = new THREE.Fog(0xcce0ff, 100, 500)
+  const scene = (() => {
+    const _ = new THREE.Scene()
+    _.background = new THREE.Color(0xcce0ff)
+    _.fog = new THREE.Fog(0xcce0ff, 100, 500)
+
+    return _
+  })()
 
   const textureLoader = new THREE.TextureLoader()
 
   const gltfLoader = new GLTFLoader()
 
-  const renderer = new THREE.WebGLRenderer()
-  renderer.setSize(window.innerWidth, window.innerHeight)
-  renderer.shadowMap.enabled = true
+  const renderer = (() => {
+    const _ = new THREE.WebGLRenderer()
+    _.setSize(window.innerWidth, window.innerHeight)
+    _.shadowMap.enabled = true
 
-  const camera = new THREE.PerspectiveCamera(
-    75,
-    window.innerWidth / window.innerHeight,
-    0.1,
-    1000
-  )
-  camera.position.y = 2
-  camera.position.z = 5
-
-  const controls = new OrbitControls(camera, renderer.domElement)
-  controls.maxDistance = 15
-  controls.maxPolarAngle = 0.4 * Math.PI
-  controls.minDistance = 15
-  controls.minPolarAngle = 0.25 * Math.PI
-
-  const playerMovement = new PlayerMovement(camera)
+    return _
+  })()
   scene.add(
     (() => {
       const _ = new THREE.DirectionalLight(0xffffff, 1)
@@ -67,34 +58,71 @@ export default async () => {
       return _
     })(),
   })
+  scene.add(
+    (() => {
+      const _ = new THREE.Mesh(
+        new THREE.PlaneGeometry(1000, 1000),
+        groundMaterial
+      )
+      _.rotation.x = -Math.PI / 2
+      _.receiveShadow = true
 
-  const ground = new THREE.Mesh(
-    new THREE.PlaneGeometry(1000, 1000),
-    groundMaterial
+      return _
+    })()
   )
-  ground.rotation.x = -Math.PI / 2
-  ground.receiveShadow = true
-  scene.add(ground)
 
   const gltf = await new Promise((resolve, reject) =>
     gltfLoader.load('RobotExpressive.glb', resolve, undefined, reject)
   )
 
-  const player = gltf.scene
-  player.rotation.y = Math.PI
-  player.traverse(child => {
-    if (child.isMesh) {
-      child.castShadow = true
-    }
-  })
+  const player = (() => {
+    const _ = gltf.scene
+    _.rotation.y = Math.PI
+    _.traverse(child => {
+      if (child.isMesh) {
+        child.castShadow = true
+      }
+    })
+
+    return _
+  })()
   scene.add(player)
+
+  const camera = (() => {
+    const _ = new THREE.PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    )
+    _.position.y = 2
+    _.position.z = 5
+
+    return _
+  })()
+
+  const controls = (() => {
+    const _ = new OrbitControls(camera, renderer.domElement)
+    _.maxDistance = 15
+    _.maxPolarAngle = 0.4 * Math.PI
+    _.minDistance = 15
+    _.minPolarAngle = 0.25 * Math.PI
+    _.target = player.position
+
+    return _
+  })()
+
+  const playerMovement = (() => {
+    const _ = new PlayerMovement(camera)
+    _.target = player
+
+    return _
+  })()
 
   const actionManager = new ActionManager(gltf)
   actionManager.setAction('Idle')
 
   const keyState = createKeyState(window)
-  controls.target = player.position
-  playerMovement.target = player
   window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight
     camera.updateProjectionMatrix()
@@ -108,7 +136,7 @@ export default async () => {
 
     const delta = clock.getDelta()
     if (keyState.Space) {
-      actionManager.triggerOneTimeAction('Jump')
+      actionManager.setAction('Jump', { resetAfter: true })
     }
     if (actionManager.activeAction.getClip().name !== 'Jump') {
       actionManager.setAction(

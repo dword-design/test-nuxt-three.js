@@ -1,3 +1,4 @@
+import { omit } from '@dword-design/functions'
 import * as THREE from 'three'
 
 export default class {
@@ -22,34 +23,31 @@ export default class {
     }
   }
 
-  setAction(name, duration = 0.5) {
+  setAction(name, options) {
+    options = { duration: 0.5, ...options }
     if (this.actions[name] === this.activeAction) {
       return
     }
     this.previousAction = this.activeAction
     this.activeAction = this.actions[name]
     if (this.previousAction !== undefined) {
-      this.previousAction.fadeOut(duration)
+      this.previousAction.fadeOut(options.duration)
     }
-    this.activeAction.reset().setEffectiveWeight(1).fadeIn(duration).play()
-  }
-
-  triggerOneTimeAction(name, duration = 0.5) {
-    if (this.actions[name] === this.activeAction) {
-      return
+    this.activeAction
+      .reset()
+      .setEffectiveWeight(1)
+      .fadeIn(options.duration)
+      .play()
+    if (options.resetAfter) {
+      const listener = () => {
+        this.setAction(
+          this.previousAction.getClip().name,
+          options |> omit(['resetAfter'])
+        )
+        this.mixer.removeEventListener('finished', listener)
+      }
+      this.mixer.addEventListener('finished', listener)
     }
-    this.previousAction = this.activeAction
-    this.activeAction = this.actions[name]
-    if (this.previousAction !== undefined) {
-      this.previousAction.fadeOut(duration)
-    }
-    this.activeAction.reset().setEffectiveWeight(1).fadeIn(duration).play()
-
-    const listener = () => {
-      this.setAction(this.previousAction.getClip().name)
-      this.mixer.removeEventListener('finished', listener)
-    }
-    this.mixer.addEventListener('finished', listener)
   }
 
   update(delta) {
