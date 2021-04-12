@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@dword-design/base": "^7.10.1",
-    "@dword-design/base-config-app": "^1.6.8"
+    "@dword-design/base-config-app": "^2.0.0"
   },
   "publishConfig": {
     "access": "public"
