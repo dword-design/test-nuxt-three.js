@@ -1,7 +1,7 @@
 {
   "name": "@dword-design/test-nuxt-three",
   "version": "1.0.0",
-  "description": "",
+  "description": null,
   "repository": "dword-design/test-nuxt-three",
   "funding": "https://www.buymeacoffee.com/dword",
   "license": "MIT",
@@ -38,5 +38,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "baseConfig": "@dword-design/app"
+  "baseConfig": "@dword-design/app",
+  "homepage": null,
+  "keywords": []
 }
