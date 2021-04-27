@@ -34,12 +34,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         name: Push changed files
         run: yarn dw-ci push-changed-files
-      - if: github.ref == 'refs/heads/master'
-        uses: webfactory/ssh-agent@v0.5.1
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      - if: github.ref == 'refs/heads/master'
-        run: ssh-keyscan dword-design.de >> ~/.ssh/known_hosts
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'

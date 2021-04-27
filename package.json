@@ -1,13 +1,13 @@
 {
   "name": "@dword-design/test-nuxt-three",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "repository": "dword-design/test-nuxt-three",
   "funding": "https://www.buymeacoffee.com/dword",
   "license": "MIT",
   "author": "Sebastian Landwehr <info@dword-design.de>",
   "main": "dist/index.js",
-  "private": true,
   "files": [
     "dist"
   ],
