@@ -9,12 +9,6 @@
         "npmPublish": false
       }
     ],
-    [
-      "@semantic-release/exec",
-      {
-        "publishCmd": "pm2 deploy production --force"
-      }
-    ],
     "@semantic-release/github",
     [
       "@semantic-release/git",
