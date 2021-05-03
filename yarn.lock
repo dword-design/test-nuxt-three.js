@@ -10376,6 +10376,13 @@ nuxt-push-plugins@^1.0.16:
   dependencies:
     "@dword-design/functions" "^3.0.0"
 
+nuxt-push-plugins@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/nuxt-push-plugins/-/nuxt-push-plugins-2.0.0.tgz#eefde53f301c07eafbc9d14e5cb53bdf6725af04"
+  integrity sha512-/H7uk5VjELdjykgelaAGac//lsoOK1+k3T/Ysy/0S3HDJ6VTGKuKJfUdRi5TLbuZA1JsMKuIl/tNolz5G9zL2w==
+  dependencies:
+    "@dword-design/functions" "^3.0.0"
+
 nuxt-svg-loader@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/nuxt-svg-loader/-/nuxt-svg-loader-1.2.0.tgz#1f2448d5170168b12c4275cd7774a79eee0132ae"
