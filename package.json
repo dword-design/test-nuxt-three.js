@@ -32,8 +32,11 @@
     "vue": "^2.6.12"
   },
   "devDependencies": {
-    "@dword-design/base": "^7.10.1",
+    "@dword-design/base": "^8.0.0",
     "@dword-design/base-config-app": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=12"
   },
   "publishConfig": {
     "access": "public"
