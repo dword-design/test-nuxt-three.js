@@ -1,3 +1,11 @@
+## [1.0.3](https://github.com/dword-design/test-nuxt-three/compare/v1.0.2...v1.0.3) (2021-05-03)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/functions to v4 ([#22](https://github.com/dword-design/test-nuxt-three/issues/22)) ([fcfe512](https://github.com/dword-design/test-nuxt-three/commit/fcfe512cf276d5346e3043d5d9f970148e259d1f))
+* update dependency nuxt-push-plugins to v2 ([#23](https://github.com/dword-design/test-nuxt-three/issues/23)) ([004128b](https://github.com/dword-design/test-nuxt-three/commit/004128b1a3bdf66bd243ea4649bb67f8603e612a))
+
 ## [1.0.2](https://github.com/dword-design/test-nuxt-three/compare/v1.0.1...v1.0.2) (2021-05-03)
 
 
