@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/dword-design/test-nuxt-three/compare/v1.0.6...v1.0.7) (2021-06-28)
+
+
+### Bug Fixes
+
+* lock file maintenance ([#31](https://github.com/dword-design/test-nuxt-three/issues/31)) ([1fc72b7](https://github.com/dword-design/test-nuxt-three/commit/1fc72b7289177c22a55273b2634f8870cefbc323))
+
 ## [1.0.6](https://github.com/dword-design/test-nuxt-three/compare/v1.0.5...v1.0.6) (2021-06-14)
 
 
