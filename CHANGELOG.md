@@ -1,3 +1,10 @@
+## [1.0.14](https://github.com/dword-design/test-nuxt-three/compare/v1.0.13...v1.0.14) (2021-08-09)
+
+
+### Bug Fixes
+
+* update dependency three to ^0.131.0 ([49922ae](https://github.com/dword-design/test-nuxt-three/commit/49922aeffc12ee1b6ac3a1aa9b5bb2bcdc314c56))
+
 ## [1.0.13](https://github.com/dword-design/test-nuxt-three/compare/v1.0.12...v1.0.13) (2021-08-09)
 
 
