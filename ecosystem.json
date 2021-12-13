@@ -11,7 +11,7 @@
   "deploy": {
     "production": {
       "host": [
-        "dword-design.de"
+        "sebastianlandwehr.com"
       ],
       "path": "/var/www/test-nuxt-three",
       "user": "root",
