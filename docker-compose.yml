@@ -11,7 +11,7 @@ services:
     command: bash -c "yarn --frozen-lockfile && yarn dev"
     environment:
       - HOST=0.0.0.0
-    image: node:19
+    image: node:12
     ports:
       - 3000:3000
     volumes:
