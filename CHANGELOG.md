@@ -1,3 +1,10 @@
+## [1.0.43](https://github.com/dword-design/test-nuxt-three/compare/v1.0.42...v1.0.43) (2023-04-18)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/functions to v4.1.7 ([7a4c074](https://github.com/dword-design/test-nuxt-three/commit/7a4c074447fd8de9bb07fb2a2269e3d545780087))
+
 ## [1.0.42](https://github.com/dword-design/test-nuxt-three/compare/v1.0.41...v1.0.42) (2023-04-18)
 
 
