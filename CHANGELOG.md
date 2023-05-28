@@ -1,3 +1,10 @@
+## [1.0.44](https://github.com/dword-design/test-nuxt-three/compare/v1.0.43...v1.0.44) (2023-05-28)
+
+
+### Bug Fixes
+
+* update dependency nuxt-push-plugins to v2.1.34 ([dc16158](https://github.com/dword-design/test-nuxt-three/commit/dc161587ed60ebf1a1aa8bf11f737e090c85e018))
+
 ## [1.0.43](https://github.com/dword-design/test-nuxt-three/compare/v1.0.42...v1.0.43) (2023-04-18)
 
 
