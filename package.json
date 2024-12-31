@@ -28,7 +28,7 @@
     "@dword-design/functions": "^4.0.0",
     "key-state": "dword-design/key-state#fork",
     "nuxt-push-plugins": "^2.0.0",
-    "three": "^0.131.0",
+    "three": "^0.172.0",
     "vue": "^2.6.12"
   },
   "devDependencies": {
